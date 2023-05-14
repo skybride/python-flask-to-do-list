@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>To Do List</title>
+	</head>
+	<body>
+		<h1>To Do List (in Python)</h1>
+
+		<ul>
+			{% for task_index, task in enumerate(tasks) %}
+			<li>
+				{{ task }}
+				<form method="post" action="/delete">
+					<input type="hidden" name="task_index" value="{{ task_index }}" />
+					<input type="submit" value="Delete" />
+				</form>
+			</li>
+			{% endfor %}
+		</ul>
+
+		<form method="post" action="/add">
+			<input type="text" name="task" />
+			<input type="submit" value="Add" />
+		</form>
+	</body>
+</html>
