@@ -19,7 +19,7 @@ def add():
 
 @app.route('/delete', methods=['POST'])
 def delete():
-    task_index = int(request.form[task_index])
+    task_index = int(request.form['task_index'])
     del tasks[task_index]
     return redirect('/')
 
